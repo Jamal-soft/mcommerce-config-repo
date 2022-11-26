@@ -3,7 +3,7 @@ server:
 
 eureka:
   client:
-    serviceUtl:
+    serviceUrl:
       defaultZone : http://localhost:9102/eureka/
 spring:
   cloud:
