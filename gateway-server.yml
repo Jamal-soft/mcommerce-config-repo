@@ -1,0 +1,21 @@
+server:
+  port: 9004
+
+eureka:
+  client:
+    serviceUtl:
+      defaultZone : http://localhost:9102/eureka/
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: microservice-produits
+          uri: http://localhost:9001
+          predicates:
+            - Path=/details-produit/**
+          filters:
+            - name: CircuitBreakerStatePrinter
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+
