@@ -12,7 +12,7 @@ spring:
         - id: microservice-produits
           uri: http://localhost:9001
           predicates:
-            - Path=/details-produit/**
+            - Path=/**
           filters:
             - name: CircuitBreakerStatePrinter
             - name: CircuitBreaker
